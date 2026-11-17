@@ -11,7 +11,6 @@ a = Analysis(
     pathex=[os.path.dirname(os.path.dirname(os.path.abspath(SPECPATH)))],
     binaries=[],
     datas=[
-        ('../app/assets', 'app/assets'),
         ('../browser_extensions', 'browser_extensions'),
     ],
     hiddenimports=[
@@ -52,13 +51,12 @@ exe = EXE(
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=False,  # GUI application — no console window
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='../app/assets/icons/app_icon.ico',
 )
 
 coll = COLLECT(
