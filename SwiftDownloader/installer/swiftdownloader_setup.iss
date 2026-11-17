@@ -86,26 +86,6 @@ begin
     Result := True;
 end;
 
-// Update the native messaging host manifest with actual install path
-procedure CurStepChanged(CurStep: TSetupStep);
-var
-  ManifestPath: String;
-  ManifestContent: String;
-begin
-  if CurStep = ssPostInstall then
-  begin
-    ManifestPath := ExpandConstant('{app}\native_host\com.swiftdownloader.host.json');
-    if LoadStringFromFile(ManifestPath, ManifestContent) then
-    begin
-      StringChangeEx(ManifestContent,
-        'C:\Program Files\SwiftDownloader\native_host.exe',
-        ExpandConstant('{app}\native_host\native_host.exe'),
-        True);
-      SaveStringToFile(ManifestPath, ManifestContent, False);
-    end;
-  end;
-end;
-
 // Ask user whether to remove app data on uninstall
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
