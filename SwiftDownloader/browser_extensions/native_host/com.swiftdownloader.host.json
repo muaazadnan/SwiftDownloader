@@ -1,0 +1,9 @@
+{
+  "name": "com.swiftdownloader.host",
+  "description": "SwiftDownloader Native Messaging Host",
+  "path": "C:\\Program Files\\SwiftDownloader\\native_host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://EXTENSION_ID_HERE/"
+  ]
+}
